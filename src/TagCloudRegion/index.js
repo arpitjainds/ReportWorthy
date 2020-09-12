@@ -177,9 +177,13 @@ export default class TagCloudRegion extends React.Component {
       hue: 'blue'
     };
 
+    const headers = {
+      border:'none',
+    };
+
     return (
       <div>
-        <Header as='h2' block inverted textAlign='left'>
+        <Header as='h2' block textAlign='left' style={headers}>
           <Icon name='filter' />
           <Header.Content>
             Filter

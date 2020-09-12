@@ -187,9 +187,13 @@ export default class TrendChart extends React.Component {
       }
     };
 
+    const headers = {
+      border:'none',
+    };
+
     return (
       <div className="trend-chart">
-        <Header as='h2' block inverted textAlign='left'>
+        <Header as='h2' block textAlign='left' style={headers}>
           <Icon name='line chart' />
           <Header.Content>
             Trending Graph

@@ -257,9 +257,13 @@ export default class SentimentChart extends React.Component {
       }
     };
 
+    const headers = {
+      border:'none',
+    };
+
     return (
       <div>
-        <Header as='h2' block inverted textAlign='left'>
+        <Header as='h2' block textAlign='left' style={headers}>
           <Icon name='pie chart' />
           <Header.Content>
             Sentiment Chart

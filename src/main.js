@@ -798,12 +798,16 @@ class Main extends React.Component {
       filtersOn = true;
     }
 
+    const headers = {
+      border:'none'
+    };
+
     return (
       <Grid celled className='search-grid'>
 
         {/* Search Field Header */}
 
-        <Grid.Row color={'blue'}>
+        <Grid.Row>
           <Grid.Column width={16} textAlign='center'>
             <SearchField
               onSearchQueryChange={this.searchQueryChanged.bind(this)}
@@ -833,7 +837,7 @@ class Main extends React.Component {
                 onClick={this.handleClearAllFiltersClick.bind(this)}
               />
             ) : null}
-            <Header as='h2' block inverted textAlign='left'>
+            <Header as='h2' block textAlign='left' style={headers}>
               <Icon name='filter' />
               <Header.Content>
                 Filter
@@ -924,12 +928,12 @@ class Main extends React.Component {
 
           {/* Results */}
 
-          <Grid.Column width={7}>
+          <Grid.Column width={9}>
             <Grid.Row>
               {loading ? (
                 <div className="results">
                   <div className="loader--container">
-                    <Dimmer active inverted>
+                    <Dimmer active>
                       <Loader>Loading</Loader>
                     </Dimmer>
                   </div>
@@ -939,8 +943,8 @@ class Main extends React.Component {
                   <div className="_container _container_large">
                     <div className="row">
                       <div>
-                        <Header as='h2' block inverted textAlign='left'>
-                          <Icon name='grid layout' />
+                        <Header as='h2' block textAlign='left' style={headers}>
+                          <Icon name='bars'/>
                           <Header.Content>
                             Matches
                           </Header.Content>
@@ -950,7 +954,6 @@ class Main extends React.Component {
                           items={ stat_items }
                         />
                         <Menu compact className="sort-dropdown">
-                          <Icon name='sort' size='large' bordered inverted />
                           <Dropdown 
                             item
                             onChange={ this.sortOrderChange.bind(this) }
@@ -984,7 +987,7 @@ class Main extends React.Component {
             </Grid.Row>
           </Grid.Column>
 
-          <Grid.Column width={6}>
+          <Grid.Column width={4}>
 
             {/* Sentiment Chart Region */}
 

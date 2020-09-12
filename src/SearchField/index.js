@@ -87,11 +87,16 @@ export default class SearchField extends React.Component {
   render() {
     const { queryType, returnPassages, limitResults } = this.state;
 
+    const mainheading = {
+      'font-size': '3.5em',
+      'font-family': 'Manrope'
+    };  
+
     return (
       <Grid className='search-field-grid'>
-        <Grid.Column width={12} verticalAlign='middle' textAlign='center'>
-          <Header as='h1' textAlign='center'>
-            Airbnb Review Data for Austin, TX
+        <Grid.Column width={12} verticalAlign='middle'>
+          <Header as='h1' style={mainheading}>
+            ReportWorthy.
           </Header>
           <Input
             className='searchinput'
