@@ -1,5 +1,3 @@
-*Read this in other languages: [日本](README-ja.md).*
-
 [![Build Status](https://api.travis-ci.org/IBM/watson-discovery-ui.svg?branch=master)](https://travis-ci.org/IBM/watson-discovery-ui)
 
 # Develop a fully featured web app built on the Watson Discovery Service
