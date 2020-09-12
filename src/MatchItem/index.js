@@ -24,6 +24,7 @@ import { List } from 'semantic-ui-react';
  */
 const MatchItem = props => (
   <List.Item>
+    <br/>
     <List.Content>
       <List.Header>
         <List.Description>
@@ -38,14 +39,14 @@ const MatchItem = props => (
       </List.Description>
     </List.Content>
     <List.Content>
-      Score: { props.score }
-    </List.Content>
-    <List.Content>
-      Date: { props.date }
-    </List.Content>
-    <List.Content>
+      <strong>Score:</strong> { props.score }
+    </List.Content><br/>
+    {/* <List.Content>
+      <strong>Date:</strong> { props.date }
+    </List.Content> */}
+    {/* <List.Content>
       Sentiment: { props.sentiment }
-    </List.Content>
+    </List.Content> */}
   </List.Item>
 );
 

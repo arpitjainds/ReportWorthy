@@ -641,7 +641,6 @@ div.ui.celled.grid.search-grid {
 
 div.ui.icon.input.searchinput {
     width: 500px;
-    font-size: 1em;
     font-family: Manrope;
 }
 
@@ -659,7 +658,9 @@ div.ui.mini.statistics {
 }
 
 div.ui.compact.sort-dropdown.menu {
-    float: right;
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
 
 button.ui.button.review-button {
@@ -669,7 +670,7 @@ button.ui.button.review-button {
     padding-bottom: 1px;
     margin-left: 5px;
     background-color: white;
-    color: #0000EE;
+    color: #79bce0;
     font-size: 13px;
     font-family: Manrope;
 }

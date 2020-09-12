@@ -215,9 +215,14 @@ export default class PaginationMenu extends React.Component {
    * render - return the menu to render.
    */
   render() {
+    const noboxshadow = {
+      'box-shadow':'none',
+      'margin':'5px',
+      'border': '1px solid rgba(34,36,38,.15)'
+    };
     return (
       <div>
-        <Menu pagination>
+        <Menu pagination style={noboxshadow}>
           {this.getMenuItemValues().map(item => 
             this.getMenuItem(item))
           }

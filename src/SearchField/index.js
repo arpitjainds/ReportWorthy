@@ -88,25 +88,35 @@ export default class SearchField extends React.Component {
     const { queryType, returnPassages, limitResults } = this.state;
 
     const mainheading = {
-      'font-size': '3.5em',
-      'font-family': 'Manrope'
+      'font-size': '4.6em',
+      'font-family': 'Manrope',
+      'letter-spacing': '-2.5px'
     };  
+
+    const searchbox = {
+      'border-radius' : '20px',
+      'font-size':'1.25em',
+      'font-family':'Manrope'
+    };
 
     return (
       <Grid className='search-field-grid'>
         <Grid.Column width={12} verticalAlign='middle'>
           <Header as='h1' style={mainheading}>
-            ReportWorthy.
+            <br/>
+            ReportWorthy.<br/><br/>
           </Header>
           <Input
+            style={searchbox}
             className='searchinput'
             icon='search'
             placeholder='Enter search string...'
             onKeyPress={this.handleKeyPress.bind(this)}
             defaultValue={this.state.searchQuery}
-          />
+          /><br/><br/><br/>
         </Grid.Column>
         <Grid.Column width={4} verticalAlign='top' textAlign='left'>
+          <br/><br/><br/><br/>
           <Grid.Row>
             <Checkbox 
               label='Natural Language Query' 

@@ -90,7 +90,7 @@ export default class TrendChart extends React.Component {
       datasets: [{
         label: 'Avg Scores (range -1.0 to 1.0)',
         data: scores,
-        backgroundColor: 'rgba(0,255,0,0.6)'
+        backgroundColor: 'rgb(132, 179, 132)'
       }]
     };
 
@@ -189,12 +189,18 @@ export default class TrendChart extends React.Component {
 
     const headers = {
       border:'none',
+      background:'none'
+    };
+
+    const noboxshadow = {
+      'box-shadow':'none',
+      'margin':'5px',
+      'border': '1px solid rgba(34,36,38,.15)'
     };
 
     return (
       <div className="trend-chart">
         <Header as='h2' block textAlign='left' style={headers}>
-          <Icon name='line chart' />
           <Header.Content>
             Trending Graph
             <Header.Subheader>
@@ -202,7 +208,7 @@ export default class TrendChart extends React.Component {
             </Header.Subheader>
           </Header.Content>
         </Header>
-        <Menu compact floated={true}>
+        <Menu compact floated={true} style={noboxshadow}>
           <Dropdown 
             item
             onChange={ this.filterTypeChange.bind(this) }
@@ -210,7 +216,7 @@ export default class TrendChart extends React.Component {
             options={ utils.filterTypes }
           />
         </Menu>
-        <Menu  className='term-menu' compact floated={true}>
+        <Menu  className='term-menu' compact floated={true} style={noboxshadow}>
           <Dropdown 
             item
             scrolling

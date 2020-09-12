@@ -173,18 +173,24 @@ export default class TagCloudRegion extends React.Component {
    */
   render() {
     const options = {
-      luminosity: 'light',
+      luminosity: 'dark',
       hue: 'blue'
     };
 
     const headers = {
       border:'none',
+      background:'none'
+    };
+
+    const noboxshadow = {
+      'box-shadow':'none',
+      'margin':'5px',
+      'border': '1px solid rgba(34,36,38,.15)'
     };
 
     return (
       <div>
         <Header as='h2' block textAlign='left' style={headers}>
-          <Icon name='filter' />
           <Header.Content>
             Filter
             <Header.Subheader>
@@ -192,7 +198,7 @@ export default class TagCloudRegion extends React.Component {
             </Header.Subheader>
           </Header.Content>
         </Header>
-        <Menu compact floated='right'>
+        <Menu compact floated='left' style={noboxshadow}>
           <Dropdown 
             simple
             item
@@ -205,8 +211,8 @@ export default class TagCloudRegion extends React.Component {
         <div>
           <TagCloud 
             tags={ this.getTagCloudItems() }
-            minSize={12}
-            maxSize={35}
+            minSize={15}
+            maxSize={25}
             colorOptions={options}
             className="word-cloud"
             onClick={this.tagSelected.bind(this)}

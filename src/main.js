@@ -783,7 +783,7 @@ class Main extends React.Component {
     const { activeFilterIndex } = this.state;
 
     const stat_items = [
-      { key: 'matches', label: 'REVIEWS', value: numMatches },
+      { key: 'matches', label: 'DOCUMENTS', value: numMatches },
       { key: 'positive', label: 'POSITIVE', value: numPositive },
       { key: 'neutral', label: 'NEUTRAL', value: numNeutral },
       { key: 'negative', label: 'NEGATIVE', value: numNegative }
@@ -799,7 +799,19 @@ class Main extends React.Component {
     }
 
     const headers = {
-      border:'none'
+      border:'none',
+      background:'none'
+    };
+
+    const noboxshadow = {
+      'box-shadow':'none',
+      'margin':'5px',
+      'border': '1px solid rgba(34,36,38,.15)'
+    };
+
+    const leftrightpadding = {
+      'padding-left':'20px',
+      'padding-right':'20px'
     };
 
     return (
@@ -838,15 +850,15 @@ class Main extends React.Component {
               />
             ) : null}
             <Header as='h2' block textAlign='left' style={headers}>
-              <Icon name='filter' />
               <Header.Content>
                 Filter
                 <Header.Subheader>
                   By List
                 </Header.Subheader>
+                <br/>
               </Header.Content>
             </Header>
-            <Accordion styled>
+            <Accordion styled style={noboxshadow}>
               <Accordion.Title 
                 active={activeFilterIndex == utils.ENTITY_DATA_INDEX}
                 index={utils.ENTITY_DATA_INDEX}
@@ -858,7 +870,7 @@ class Main extends React.Component {
                 {this.getEntitiesFilter()}
               </Accordion.Content>
             </Accordion>
-            <Accordion styled>
+            <Accordion styled style={noboxshadow}>
               <Accordion.Title 
                 active={activeFilterIndex == utils.CATEGORY_DATA_INDEX}
                 index={utils.CATEGORY_DATA_INDEX}
@@ -870,7 +882,7 @@ class Main extends React.Component {
                 {this.getCategoriesFilter()}
               </Accordion.Content>
             </Accordion>
-            <Accordion styled>
+            <Accordion styled style={noboxshadow}>
               <Accordion.Title 
                 active={activeFilterIndex == utils.CONCEPT_DATA_INDEX}
                 index={utils.CONCEPT_DATA_INDEX}
@@ -882,7 +894,7 @@ class Main extends React.Component {
                 {this.getConceptsFilter()}
               </Accordion.Content>
             </Accordion>
-            <Accordion styled>
+            <Accordion styled style={noboxshadow}>
               <Accordion.Title
                 active={activeFilterIndex == utils.KEYWORD_DATA_INDEX}
                 index={utils.KEYWORD_DATA_INDEX}
@@ -894,7 +906,7 @@ class Main extends React.Component {
                 {this.getKeywordsFilter()}
               </Accordion.Content>
             </Accordion>
-            <Accordion styled>
+            <Accordion styled style={noboxshadow}>
               <Accordion.Title
                 active={activeFilterIndex == utils.ENTITY_TYPE_DATA_INDEX}
                 index={utils.ENTITY_TYPE_DATA_INDEX}
@@ -944,25 +956,31 @@ class Main extends React.Component {
                     <div className="row">
                       <div>
                         <Header as='h2' block textAlign='left' style={headers}>
-                          <Icon name='bars'/>
                           <Header.Content>
                             Matches
+                            <Header.Subheader>
+                              By List
+                            </Header.Subheader>
                           </Header.Content>
+                          <br/><br/>
                         </Header>
-                        <Statistic.Group
-                          size='mini'
-                          items={ stat_items }
-                        />
-                        <Menu compact className="sort-dropdown">
-                          <Dropdown 
-                            item
-                            onChange={ this.sortOrderChange.bind(this) }
-                            value={ sortOrder }
-                            options={ utils.sortTypes }
+                        <div style={leftrightpadding}>
+                          <Statistic.Group
+                            size='small'
+                            items={ stat_items }
                           />
-                        </Menu>
+                          <Menu compact className="sort-dropdown" style={noboxshadow}>
+                            <Dropdown 
+                              item
+                              onChange={ this.sortOrderChange.bind(this) }
+                              value={ sortOrder }
+                              options={ utils.sortTypes }
+                            />
+                          </Menu>
+                        </div>
                       </div>
-                      <div>
+                      <br/><br/>
+                      <div style={leftrightpadding}>
                         {this.getMatches()}
                       </div>
                     </div>

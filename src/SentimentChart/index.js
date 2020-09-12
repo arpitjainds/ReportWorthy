@@ -140,14 +140,14 @@ export default class SentimentChart extends React.Component {
         ],
         // colors for each piece of the graph
         backgroundColor: [
-          'rgba(0,255,0,0.6)',
-          'rgba(192,192,192,0.6)',
-          'rgba(255,0,0,0.6)'
+          'rgb(132, 179, 132)',
+          'rgba(192,192,192,0.3)',
+          'rgb(222, 135, 135)'
         ],
         hoverBackgroundColor: [
-          'rgba(0,255,0,0.6)',
-          'rgba(192,192,192,0.6)',
-          'rgba(255,0,0,0.6)'
+          'rgb(138, 207, 138)',
+          'rgba(192,192,192,0.45)',
+          'rgb(232, 111, 111)'
         ]
       }]
     };
@@ -259,12 +259,18 @@ export default class SentimentChart extends React.Component {
 
     const headers = {
       border:'none',
+      background:'none'
+    };
+
+    const noboxshadow = {
+      'box-shadow':'none',
+      'margin':'5px',
+      'border': '1px solid rgba(34,36,38,.15)'
     };
 
     return (
       <div>
         <Header as='h2' block textAlign='left' style={headers}>
-          <Icon name='pie chart' />
           <Header.Content>
             Sentiment Chart
             <Header.Subheader>
@@ -272,7 +278,7 @@ export default class SentimentChart extends React.Component {
             </Header.Subheader>
           </Header.Content>
         </Header>
-        <Menu compact floated={true}>
+        <Menu compact floated={true} style={noboxshadow}>
           <Dropdown 
             item
             onChange={ this.filterTypeChange.bind(this) }
@@ -280,7 +286,7 @@ export default class SentimentChart extends React.Component {
             options={ utils.filterTypes }
           />
         </Menu>
-        <Menu className='term-menu' compact floated={true}>
+        <Menu className='term-menu' compact floated={true} style={noboxshadow}>
           <Dropdown 
             item
             scrolling
