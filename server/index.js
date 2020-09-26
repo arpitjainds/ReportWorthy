@@ -40,9 +40,9 @@ const DEFAULT_NAME = 'airbnb-austin-data';
 var discoveryDocs = [];
 const fs = require('fs');
 const path = require('path');
-var arrayOfFiles = fs.readdirSync('./data/airbnb/');
+var arrayOfFiles = fs.readdirSync('./data/ReportWorthy/');
 arrayOfFiles.forEach(function(file) {
-  discoveryDocs.push(path.join('./data/airbnb/', file));
+  discoveryDocs.push(path.join('./data/ReportWorthy/', file));
 });
 // shorten the list if we are loading - trail version of IBM Cloud 
 // is limited to 256MB application size, so use this if you get
@@ -56,7 +56,7 @@ const discovery = new DiscoveryV1({
 const discoverySetup = new WatsonDiscoverySetup(discovery);
 const discoverySetupParams = { 
   default_name: DEFAULT_NAME, 
-  config_name: 'airbnb-keyword-extraction'   // instead of 'Default Configuration'
+  config_name: 'reportWorthy-keyword-extraction'   // instead of 'Default Configuration'
 };
 
 const WatsonDiscoServer = new Promise((resolve) => {
