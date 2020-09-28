@@ -36,7 +36,7 @@ const utils = require('../lib/utils');
 
 var environment_id;
 var collection_id;
-const DEFAULT_NAME = 'airbnb-austin-data';
+const DEFAULT_NAME = 'ReportWorthy';
 var discoveryDocs = [];
 const fs = require('fs');
 const path = require('path');
