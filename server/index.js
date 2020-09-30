@@ -50,7 +50,7 @@ arrayOfFiles.forEach(function(file) {
 discoveryDocs = discoveryDocs.slice(0,300);
 
 const discovery = new DiscoveryV1({
-  version: '2019-03-25'
+  version: '2020-08-30'
 });
 
 const discoverySetup = new WatsonDiscoverySetup(discovery);
