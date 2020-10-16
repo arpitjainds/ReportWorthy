@@ -7,7 +7,7 @@ applications:
 - path: .
   name: watson-discovery-ui
   buildpack: sdk-for-nodejs
-  memory: 250M
+  memory: 245M
   instances: 1
   random-route: false
   services:
