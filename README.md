@@ -20,7 +20,7 @@ When the reader has completed this code pattern, they will understand how to:
 
 Note that each review will be truncated to 200 characters or less. A `more...` button will be provided for each review, and when clicked, the full review title and text will be displayed in a pop-up modal window, as shown below:
 
-![full_review](doc/source/images/review-popup.png)
+![full_review](doc/source/images/reviewpopup.png)
 
 If the `more...` button is clicked, the review data will be passed back to Discovery so that it can be logged as a relevant review for the query. Refer to the [Watson Discovery Continuous Relevancy Training](#watson-discovery-continuous-relevancy-training) section above for more information on this feature.
 
